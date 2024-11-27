@@ -331,6 +331,11 @@ img {
   font-size: 1.25rem;
 }
 
+.home__title mark {
+  background-color: hsl(var(--hue-color), 69%, 61%);
+  color: white;
+}
+
 /*==================== BUTTONS ====================*/
 .button {
   display: inline-block;
