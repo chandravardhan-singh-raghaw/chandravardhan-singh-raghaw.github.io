@@ -16,16 +16,29 @@
     <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
 
-    <style>
-        #particles-js {
-          position: absolute; 
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          z-index: 1; 
-        }
-      </style>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow-x: hidden;
+    }
+
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1; /* Above content but below interactive elements */
+        pointer-events: none; /* Allow mouse interactions to pass through */
+    }
+
+    body > *:not(#particles-js) {
+        position: relative; /* Ensure all content layers are interactable */
+        z-index: 2; /* Bring content in front of particles */
+    }
+    </style>
     
     <title>Chandravardhan</title>
 </head>
@@ -912,7 +925,7 @@
                     }
                 },
                 "interactivity": {
-                    "detect_on": "canvas", 
+                    "detect_on": "window", 
                     "events": {
                         "onhover": {
                             "enable": true, 
