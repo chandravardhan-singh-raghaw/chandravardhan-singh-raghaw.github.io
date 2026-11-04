@@ -1,0 +1,28 @@
+{% include base_path %}
+
+<div class="page__footer-copyright">
+  &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }} &middot;
+  Last updated {{ site.time | date: '%d %B %Y' }} &middot;
+  <span id="visit-count-wrap"><span id="visit-count">&hellip;</span> visits</span> &middot;
+  <a href="{{ base_path }}/sitemap/">Sitemap</a>
+  <br />
+  Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> and <a href="https://github.com/academicpages/academicpages.github.io" rel="nofollow">AcademicPages</a>.
+</div>
+
+<!-- Visit counter: counts one visit per browser session (page refreshes and internal navigation are not re-counted). -->
+<script>
+(function () {
+  var NS = "chandravardhan-singh-raghaw-github-io", KEY = "site-visits";
+  var el = document.getElementById("visit-count"), wrap = document.getElementById("visit-count-wrap");
+  if (!el) return;
+  var counted = false;
+  try { counted = sessionStorage.getItem("cvr-visit-counted") === "1"; } catch (e) {}
+  var url = "https://api.counterapi.dev/v1/" + NS + "/" + KEY + (counted ? "" : "/up");
+  fetch(url).then(function (r) { return r.json(); }).then(function (d) {
+    if (d && typeof d.count === "number") {
+      el.textContent = d.count.toLocaleString();
+      try { sessionStorage.setItem("cvr-visit-counted", "1"); } catch (e) {}
+    } else { wrap.style.display = "none"; }
+  }).catch(function () { wrap.style.display = "none"; });
+})();
+</script>

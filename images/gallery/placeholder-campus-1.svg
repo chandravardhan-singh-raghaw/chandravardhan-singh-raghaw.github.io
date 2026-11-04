@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" width="1200" height="700">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#33475c" stop-opacity="0.95"/><stop offset="1" stop-color="#33475c" stop-opacity="0.55"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity="0.12"/></pattern></defs>
+<rect width="1200" height="700" fill="url(#g)"/><rect width="1200" height="700" fill="url(#grid)"/>
+<g fill="#fff" font-family="Georgia, serif" text-anchor="middle">
+<text x="600.0" y="350.0" font-size="72" opacity="0.95">Campus</text>
+<text x="600.0" y="392.0" font-size="26" font-family="Helvetica, Arial, sans-serif" opacity="0.7">Replace with your photo — see assets/js/data/gallery.js</text>
+</g></svg>
