@@ -22,7 +22,6 @@ Personal academic website, built on the [AcademicPages](https://github.com/acade
 | Teaching | one file per institution in `_teaching/` |
 | Selected-publication slider (home) | `_data/selected.yml` + figures in `images/pubs/` |
 | Academic service | `_pages/academic-service.md` |
-| Academic activities (photos) | `_pages/activities.md` (photo lists in the front matter) + images in `images/gallery/` |
 | Profile photo | `images/profile.png` |
 | Footer (last updated, visit counter) | `_includes/footer.html` |
 | Extra CSS | `_sass/layout/_custom.scss` |
@@ -46,17 +45,6 @@ paperurl: 'https://doi.org/10.xxxx/yyyy'  # optional; the title links here
 ```
 
 Move a paper from `underreview` to its final category when it is accepted, and update `date`.
-
-## Adding a photo
-
-Drop the image into `images/gallery/`, then add an entry to the relevant list in the front matter of `_pages/activities.md`:
-
-```yaml
-  - url: gallery/emnlp-2026.jpg
-    image_path: gallery/emnlp-2026.jpg
-    alt: "Presenting at EMNLP 2026"
-    title: "Presenting CliQ-RRG at EMNLP 2026"
-```
 
 ## Selected-publication slider (home page)
 

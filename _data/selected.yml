@@ -5,7 +5,7 @@
 # links: label + url pairs (DOI, Code, Dataset, PDF ...)
 - title: "CliQ-RRG: Clinical-Knowledge Guided Disease-aware Visual–Textual Alignment for QA-Style Radiology Report Generation"
   venue: "Findings of EMNLP 2026"
-  image: pubs/cliq-rrg.svg
+  image: pubs/cliq-rrg.png
   caption: "Disease-aware visual–textual alignment turns a chest X-ray into a QA-style report grounded in clinical knowledge."
   tags: ["Conference", "CORE A*", "First author"]
   links:
@@ -13,7 +13,7 @@
 
 - title: "H-SemiS: Hierarchical Fusion of Semi and Self-Supervised Learning for Knee Osteoarthritis Severity Grading"
   venue: "Expert Systems with Applications, 2026"
-  image: pubs/h-semis.svg
+  image: pubs/h-semis.png
   caption: "Hierarchical fusion of semi- and self-supervised signals for Kellgren–Lawrence grading from knee radiographs."
   tags: ["Journal", "Q1", "First author"]
   links:
@@ -21,7 +21,7 @@
 
 - title: "T-MPEDNet: Transformer-aware Multiscale Progressive Encoder-Decoder Network with Feature Recalibration for Tumor and Liver Segmentation"
   venue: "Biomedical Signal Processing and Control, 2025"
-  image: pubs/t-mpednet.svg
+  image: pubs/t-mpednet.png
   caption: "Multiscale progressive encoder–decoder with feature recalibration for liver and tumor segmentation in abdominal CT."
   tags: ["Journal", "Q1", "First author"]
   links:
@@ -29,7 +29,7 @@
 
 - title: "An Explainable Contrastive-based Dilated Convolutional Network with Transformer for Pediatric Pneumonia Detection"
   venue: "Applied Soft Computing, 2024"
-  image: pubs/pneumonia.svg
+  image: pubs/pneumonia.png
   caption: "Contrastive dilated convolutions with a transformer head, plus saliency maps that show where the model looks."
   tags: ["Journal", "Q1", "First author"]
   links:
@@ -37,7 +37,7 @@
 
 - title: "CoTCoNet: An Optimized Coupled Transformer-Convolutional Network with Adaptive Graph Reconstruction for Leukemia Detection"
   venue: "Computers in Biology and Medicine, 2024"
-  image: pubs/cotconet.svg
+  image: pubs/cotconet.png
   caption: "Coupled transformer–convolutional features with adaptive graph reconstruction for leukemia cell classification."
   tags: ["Journal", "Q1", "First author"]
   links:

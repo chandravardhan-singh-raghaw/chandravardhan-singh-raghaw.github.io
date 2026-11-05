@@ -39,8 +39,8 @@ author:
   inspire-hep      : # URL
   impactstory      : # URL
   orcid            : "https://orcid.org/0009-0003-2268-9507"
-  semantic         : "https://www.semanticscholar.org/author/Chandravardhan-Singh-Raghaw/2310260213"
-  dblp             : "https://dblp.org/pid/381/6472.html"
+  semantic         : # URL of your Semantic Scholar author page, e.g. https://www.semanticscholar.org/author/XXXXXXX  (leave blank to hide)
+  dblp             : # URL of your DBLP page, e.g. https://dblp.org/pid/xxx/xxxx.html  (leave blank to hide)
   ssrn             : # URL
   pubmed           : 
   researchgate     : # URL

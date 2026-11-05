@@ -53,7 +53,8 @@
 @keyframes pfade { from { opacity: 0; } to { opacity: 1; } }
 .pslider__fig {
   margin: 0;
-  img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 4px; border: 1px solid var(--global-border-color); display: block; }
+  a { display: block; height: 320px; background: #fff; border-radius: 4px; border: 1px solid var(--global-border-color); }
+  img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 0.4em; box-sizing: border-box; }
   figcaption { font-size: 0.8em; color: var(--global-text-color-light); margin-top: 0.5em; line-height: 1.4; text-align: left; }
 }
 .pslider__title { font-size: 1em; line-height: 1.4; margin: 0 0 0.4em; text-align: left; }
@@ -64,7 +65,7 @@
 .pslider__btn { background: none; border: 1px solid var(--global-border-color); color: var(--global-text-color); width: 2.1em; height: 2.1em; border-radius: 50%; cursor: pointer; &:hover { border-color: var(--global-base-color); color: var(--global-base-color); } }
 .pslider__dots { display: flex; gap: 0.45em; }
 .pslider__dot { width: 0.6em; height: 0.6em; border-radius: 50%; border: 0; padding: 0; background: var(--global-border-color); cursor: pointer; &.is-active { background: var(--global-base-color); } }
-@media (max-width: 760px) { .pslider__slide { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .pslider__slide { grid-template-columns: 1fr; } .pslider__fig a { height: 220px; } }
 .see-all { font-size: 0.9em; color: var(--global-text-color-light); }
 
 /* ---------- Publications ---------- */
@@ -130,11 +131,6 @@
 .svc-timeline li { display: grid; grid-template-columns: 6em 1fr; gap: 0.8em; padding: 0.35em 0; border-bottom: 1px solid var(--global-border-color); }
 .svc-timeline time { color: var(--global-text-color-light); font-variant-numeric: tabular-nums; }
 @media (max-width: 760px) { .svc-grid { grid-template-columns: 1fr; } }
-
-/* ---------- Activities (photo thumbnails) ---------- */
-.act-block { margin-bottom: 1.6em; }
-.act-block figure img { border-radius: 4px; border: 1px solid var(--global-border-color); aspect-ratio: 4 / 3; object-fit: cover; }
-.act-block figure a:hover img { opacity: 0.9; }
 
 /* ---------- Footer ---------- */
 .page__footer-copyright { font-size: 0.75em; line-height: 1.9; }

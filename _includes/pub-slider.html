@@ -4,7 +4,7 @@
     {% for s in site.data.selected %}
     <article class="pslider__slide{% if forloop.first %} is-active{% endif %}" role="group" aria-label="{{ forloop.index }} of {{ site.data.selected.size }}">
       <figure class="pslider__fig">
-        <img src="{{ s.image | prepend: '/images/' | prepend: base_path }}" alt="{{ s.caption }}" loading="lazy">
+        <a href="{{ s.image | prepend: '/images/' | prepend: base_path }}" title="Open full-size figure"><img src="{{ s.image | prepend: '/images/' | prepend: base_path }}" alt="{{ s.caption }}" loading="lazy"></a>
         <figcaption>{{ s.caption }}</figcaption>
       </figure>
       <div class="pslider__body">
