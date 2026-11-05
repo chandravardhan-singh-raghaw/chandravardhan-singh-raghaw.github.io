@@ -39,8 +39,8 @@ author:
   inspire-hep      : # URL
   impactstory      : # URL
   orcid            : "https://orcid.org/0009-0003-2268-9507"
-  semantic         : # URL of your Semantic Scholar author page, e.g. https://www.semanticscholar.org/author/XXXXXXX  (leave blank to hide)
-  dblp             : # URL of your DBLP page, e.g. https://dblp.org/pid/xxx/xxxx.html  (leave blank to hide)
+  semantic         : "https://www.semanticscholar.org/author/Chandravardhan-Singh-Raghaw/2310260213"
+  dblp             : "https://dblp.org/pid/381/6472.html"
   ssrn             : # URL
   pubmed           : 
   researchgate     : # URL
@@ -131,7 +131,7 @@ staticman:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 # Visit counter (GoatCounter, free for personal sites): sign up at https://www.goatcounter.com,
 # choose a code (e.g. "chandravardhan"), and put it here. Leave blank to hide the counter.
-goatcounter_code         : "chandravardhan"   # optional, see README
+goatcounter_code         : ""   # optional, see README
 
 atom_feed:
   hide                   : true

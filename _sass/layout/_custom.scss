@@ -184,6 +184,11 @@
   .author__name { font-size: 1.05em; margin: 0.6em 0 0.2em; }
   .author__bio { font-size: 0.85em; margin: 0 0 0.6em; line-height: 1.4; }
   .author__urls li { font-size: 0.85em; margin-bottom: 0.15em; }
+  /* the email address is long: let it wrap onto two lines instead of being clipped */
+  .author__urls li a.email-obf {
+    white-space: normal; overflow: visible; text-overflow: clip; word-break: break-all;
+    display: inline-block; font-size: 0.95em; line-height: 1.35; vertical-align: top; max-width: calc(100% - 1.8em);
+  }
   .author__urls-wrapper { margin-top: 0.4em; }
 }
 @media screen and (min-width: 1024px) {
