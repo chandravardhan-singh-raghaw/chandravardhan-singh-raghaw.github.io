@@ -9,7 +9,7 @@ author_profile: true
 
 * [About]({{ base_path }}/)
 * [Publications]({{ base_path }}/publications/)
-* [Teaching]({{ base_path }}/teaching/)
+* [Experience]({{ base_path }}/experience/)
 * [CV]({{ base_path }}/cv/)
 * [Academic Service]({{ base_path }}/academic-service/)
 

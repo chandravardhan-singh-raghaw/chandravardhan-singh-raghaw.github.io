@@ -20,7 +20,7 @@ Education
 
 Experience
 ======
-* **Postdoctoral Researcher**, AI Centre of Excellence in Healthcare (TANUH), Indian Institute of Science, Bengaluru — Jul 2026 – present
+* **Postdoctoral Researcher**, [AI Centre of Excellence in Healthcare (TANUH)](https://www.tanuh.ai/), Indian Institute of Science, Bengaluru — Jul 2026 – present
   * Researching Indian brain foundation models (IndiNeuroFM) for clinical healthcare.
   * Developing multimodal vision-language architectures for automated clinical report generation.
   * Designing evaluation benchmarks and cross-modal alignment frameworks for medical imaging.

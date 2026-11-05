@@ -1,0 +1,17 @@
+# Industrial experience shown on the Experience page (Industrial tab), newest first.
+- title: "Web Developer"
+  org: "Robo India"
+  period: "2018 – 2022"
+  tools: "PHP, JavaScript, MySQL, HTML5/CSS3"
+  points:
+    - Developed responsive web applications and e-commerce solutions tailored to client specifications.
+    - Managed the full SDLC, including UI/UX design, database integration and performance optimisation.
+    - Automated maintenance tasks and provided technical support, ensuring maximum platform uptime.
+- title: "Project Manager (IT)"
+  org: "Mechatronix Techno Solution"
+  period: "2014 – 2015"
+  tools: "MS Project, Agile methodologies, resource allocation"
+  points:
+    - Spearheaded IT infrastructure projects, ensuring delivery within strict timelines and budgets.
+    - Optimised resource allocation and vendor contracts to reduce operational overhead.
+    - Liaised between stakeholders and technical teams to align project milestones and goals.

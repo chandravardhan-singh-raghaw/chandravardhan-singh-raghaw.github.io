@@ -2,45 +2,52 @@
 
 <div class="page__footer-copyright">
   &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }} &middot;
-  Last updated {{ site.time | date: '%d %b %Y' }}{% if site.goatcounter_code and site.goatcounter_code != "" %} &middot;
-  <span id="visit-count-wrap"><span id="visit-count">&hellip;</span> visitors</span>{% endif %} &middot;
+  Last updated {{ site.time | date: '%d %b %Y' }} &middot;
   <a href="{{ base_path }}/sitemap/">Sitemap</a>
   <br />
   Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> and <a href="https://github.com/academicpages/academicpages.github.io" rel="nofollow">AcademicPages</a>.
 </div>
 
-<!-- Email obfuscation: build the mailto link only when clicked (keeps the address out of the HTML source). -->
+<!-- Unique-visitor counter, fixed bottom-right.
+     Default: Visitor Badge (no account needed; counts unique visitors, not page refreshes).
+     If goatcounter_code is set in _config.yml, GoatCounter is used instead (gives you a private dashboard too). -->
+{% if site.goatcounter_code and site.goatcounter_code != "" %}
+<div class="visitor-pill visitor-pill--solid" title="Unique visitors"><i class="fas fa-fw fa-user-friends" aria-hidden="true"></i> <span id="visit-count">&hellip;</span> visitors</div>
+{% else %}
+<div class="visitor-pill" title="Unique visitors">
+  <img alt="unique visitors" src="https://api.visitorbadge.io/api/visitors?path={{ site.url | url_encode }}&label=visitors&labelColor=%23555555&countColor=%232f7f93&style=flat" onerror="this.parentNode.style.display='none'">
+</div>
+{% endif %}
+
 <script>
+/* 1. Email obfuscation: build the mailto only when clicked. */
 document.querySelectorAll('a.email-obf').forEach(function (a) {
   a.addEventListener('click', function (e) { e.preventDefault(); location.href = 'mailto:' + a.dataset.u + '@' + a.dataset.d; });
+});
+/* 2. Every external link opens in a new tab. */
+document.querySelectorAll('a[href]').forEach(function (a) {
+  if (a.hostname && a.hostname !== location.hostname && /^https?:/.test(a.protocol)) {
+    a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener noreferrer');
+  }
 });
 </script>
 
 {% if site.goatcounter_code and site.goatcounter_code != "" %}
-<!-- Visit counter via GoatCounter (https://www.goatcounter.com). One visit is counted per browser session:
-     refreshes and page-to-page navigation inside the same session are not re-counted. -->
 <script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count"
-        data-goatcounter-settings='{"no_onload": true}'
-        async src="//gc.zgo.at/count.js"></script>
+        data-goatcounter-settings='{"no_onload": true}' async src="//gc.zgo.at/count.js"></script>
 <script>
 (function () {
-  var code = "{{ site.goatcounter_code }}";
-  var el = document.getElementById("visit-count"), wrap = document.getElementById("visit-count-wrap");
-  var counted = false;
-  try { counted = sessionStorage.getItem("gc-visit-counted") === "1"; } catch (e) {}
+  var code = "{{ site.goatcounter_code }}", el = document.getElementById("visit-count"), pill = el.closest('.visitor-pill');
+  var counted = false; try { counted = sessionStorage.getItem("gc-visit-counted") === "1"; } catch (e) {}
   function countOnce() {
     if (counted || !window.goatcounter || !window.goatcounter.count) return;
     window.goatcounter.count({ path: "/", title: "Site visit" });
-    try { sessionStorage.setItem("gc-visit-counted", "1"); } catch (e) {}
-    counted = true;
+    try { sessionStorage.setItem("gc-visit-counted", "1"); } catch (e) {} counted = true;
   }
-  // count.js loads async; wait for it
   var tries = 0, t = setInterval(function () { if (window.goatcounter || ++tries > 40) { clearInterval(t); countOnce(); } }, 100);
-  // total visitors badge (GoatCounter must have "Allow adding visitor counts" enabled in Settings → Visitor counter)
-  fetch("https://" + code + ".goatcounter.com/counter/TOTAL.json")
-    .then(function (r) { return r.json(); })
-    .then(function (d) { if (d && d.count) el.textContent = d.count; else wrap.style.display = "none"; })
-    .catch(function () { wrap.style.display = "none"; });
+  fetch("https://" + code + ".goatcounter.com/counter/TOTAL.json").then(function (r) { return r.json(); })
+    .then(function (d) { if (d && d.count) el.textContent = d.count; else pill.style.display = "none"; })
+    .catch(function () { pill.style.display = "none"; });
 })();
 </script>
 {% endif %}

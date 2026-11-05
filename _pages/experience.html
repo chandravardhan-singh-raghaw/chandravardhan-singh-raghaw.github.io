@@ -1,0 +1,74 @@
+---
+layout: archive
+title: "Experience"
+permalink: /experience/
+author_profile: true
+redirect_from:
+  - /teaching/
+---
+
+{% include base_path %}
+
+<p class="pub__intro">Teaching positions across three institutions and industry roles in software development and IT project management. Research positions are listed in the <a href="{{ base_path }}/cv/">CV</a>.</p>
+
+<div class="xp-tabs" role="tablist">
+  <button class="xp-tab is-active" role="tab" aria-selected="true" data-target="xp-teaching"><i class="fas fa-fw fa-graduation-cap"></i> Teaching</button>
+  <button class="xp-tab" role="tab" aria-selected="false" data-target="xp-industrial"><i class="fas fa-fw fa-briefcase"></i> Industrial</button>
+</div>
+
+<!-- ===== Teaching ===== -->
+<div class="xp-panel is-active" id="xp-teaching" role="tabpanel">
+  <div class="xp-timeline">
+  {% for post in site.teaching reversed %}
+    <div class="xp-item {% cycle 'teach': 'xp-left', 'xp-right' %}">
+      <div class="xp-marker" aria-hidden="true"></div>
+      <div class="xp-card">
+        <h3 class="xp-title">{{ post.role }}</h3>
+        <p class="xp-sub">{{ post.title }}</p>
+        <p class="xp-date"><i class="far fa-fw fa-calendar-alt"></i> {{ post.period }}</p>
+        <p class="xp-type">{{ post.type }}</p>
+        <ul class="xp-courses">
+        {% for c in post.courses %}
+          <li><span class="xp-code">{{ c.code }}</span> {{ c.name }} <span class="xp-terms">({{ c.terms }})</span></li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+<!-- ===== Industrial ===== -->
+<div class="xp-panel" id="xp-industrial" role="tabpanel">
+  <div class="xp-timeline">
+  {% for job in site.data.industrial %}
+    <div class="xp-item {% cycle 'ind': 'xp-left', 'xp-right' %}">
+      <div class="xp-marker" aria-hidden="true"></div>
+      <div class="xp-card">
+        <h3 class="xp-title">{{ job.title }}</h3>
+        <p class="xp-sub">{{ job.org }}</p>
+        <p class="xp-date"><i class="far fa-fw fa-calendar-alt"></i> {{ job.period }}</p>
+        <p class="xp-type">Tools: {{ job.tools }}</p>
+        <ul class="xp-courses">
+        {% for pt in job.points %}<li>{{ pt }}</li>{% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.xp-tab'), panels = document.querySelectorAll('.xp-panel');
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      tabs.forEach(function (x) { var on = x === t; x.classList.toggle('is-active', on); x.setAttribute('aria-selected', on); });
+      panels.forEach(function (p) { p.classList.toggle('is-active', p.id === t.dataset.target); });
+      if (history.replaceState) history.replaceState(null, '', '#' + t.dataset.target.replace('xp-', ''));
+    });
+  });
+  var h = location.hash.replace('#', '');
+  if (h) { var b = document.querySelector('.xp-tab[data-target="xp-' + h + '"]'); if (b) b.click(); }
+})();
+</script>

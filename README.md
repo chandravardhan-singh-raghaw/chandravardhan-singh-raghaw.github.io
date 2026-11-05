@@ -19,7 +19,8 @@ Personal academic website, built on the [AcademicPages](https://github.com/acade
 | Home page (about, news, selected papers) | `_pages/about.md` |
 | CV | `_pages/cv.md`; PDF at `files/CV_Chandravardhan_Singh_Raghaw.pdf` |
 | Publications | one Markdown file per paper in `_publications/` |
-| Teaching | one file per institution in `_teaching/` |
+| Experience → Teaching tab | one file per institution in `_teaching/` |
+| Experience → Industrial tab | `_data/industrial.yml` |
 | Selected-publication slider (home) | `_data/selected.yml` + figures in `images/pubs/` |
 | Academic service | `_pages/academic-service.md` |
 | Profile photo | `images/profile.png` |
@@ -50,14 +51,11 @@ Move a paper from `underreview` to its final category when it is accepted, and u
 
 Each slide is an entry in `_data/selected.yml`. Replace the placeholder figures in `images/pubs/` with your graphical abstracts (16:9, about 1200×675 px, PNG or JPG) and update the `image:` field to the new file name. The slider advances every 6 seconds, pauses on hover, and supports arrows, dots, keyboard and swipe.
 
-## Visit counter and "last updated"
+## Visitor counter and "last updated"
 
-* **Last updated** is the build time, so it changes automatically with every push.
-* **Visitors** uses [GoatCounter](https://www.goatcounter.com) (free for personal sites, no cookies, no ads). One-time setup:
-  1. Sign up at goatcounter.com and choose a code, e.g. `chandravardhan` (your dashboard becomes `chandravardhan.goatcounter.com`).
-  2. In the GoatCounter dashboard: **Settings → Visitor counter → tick "Allow adding visitor counts"** and save.
-  3. In `_config.yml` set `goatcounter_code: "chandravardhan"`, commit and push.
-  The footer then shows the total number of visitors. A visit is counted once per browser session, so refreshing or moving between pages does not inflate it. Until the code is set the counter is hidden.
+* **Last updated** (footer) is the build time, so it changes automatically with every push.
+* **Unique visitors** (bottom-right pill) works out of the box via Visitor Badge (visitorbadge.io): it counts unique visitors, so refreshes do not add to it, and needs no account. If the badge service is ever unreachable the pill hides itself.
+* Optional upgrade: [GoatCounter](https://www.goatcounter.com) gives you a private analytics dashboard as well. Sign up, pick a code (e.g. `chandravardhan`), enable **Settings → Visitor counter → Allow adding visitor counts**, then set `goatcounter_code: "chandravardhan"` in `_config.yml`. The pill then shows GoatCounter's unique-visitor total instead.
 
 ## Sidebar links
 

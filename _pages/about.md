@@ -7,10 +7,10 @@ redirect_from:
   - /about.html
 ---
 
-<p class="lead-role">Postdoctoral Researcher &middot; Indian Institute of Science (IISc), Bengaluru<br>
-<span class="lead-topics">Multimodal AI &middot; Medical Imaging &middot; Vision-Language Models &middot; Clinical NLP</span></p>
+<p class="lead-role">Postdoctoral Researcher &middot; Indian Institute of Science (IISc), Bengaluru</p>
+<p class="lead-badges"><span>Multimodal AI</span><span>Medical Imaging</span><span>Vision-Language Models</span><span>Clinical NLP</span></p>
 
-I am a Postdoctoral Researcher at the AI Centre of Excellence in Healthcare (TANUH), [Indian Institute of Science (IISc)](https://iisc.ac.in/), Bengaluru, working with [Prof. Phaneendra K. Yalavarthy](https://cds.iisc.ac.in/faculty/yalavarthy/).
+I am a Postdoctoral Researcher at the [AI Centre of Excellence in Healthcare (TANUH)](https://www.tanuh.ai/), Indian Institute of Science (IISc), Bengaluru, working with [Prof. Phaneendra K. Yalavarthy](https://cds.iisc.ac.in/faculty/yalavarthy/).
 
 My research focuses on developing multimodal artificial intelligence systems for medical image understanding, clinical report generation, and healthcare foundation models. I am particularly interested in vision-language learning, clinical knowledge integration, retrieval-augmented generation, and trustworthy AI for medical applications.
 
