@@ -79,4 +79,14 @@ News
 
 Contact
 ======
-chandravardhan.raghaw [at] tanuh.ai &middot; AI Centre of Excellence in Healthcare (TANUH), Indian Institute of Science, Bengaluru 560012, India. I am happy to discuss collaborations on medical vision-language models and datasets, reviewing, and student projects.
+<div class="contact-block">
+  <p class="contact-line"><i class="fas fa-fw fa-envelope"></i> chandravardhan.raghaw [at] tanuh.ai</p>
+  <p class="contact-line"><i class="fas fa-fw fa-map-marker-alt"></i> AI Centre of Excellence in Healthcare (TANUH), Indian Institute of Science, Bengaluru 560012, India</p>
+  <p class="contact-note">I am happy to discuss collaborations on medical vision-language models and datasets, reviewing requests, and student projects.</p>
+</div>
+
+<blockquote class="motto" lang="hi">
+  <p class="motto__hi">“जितना बड़ा संघर्ष होगा, जीत उतनी ही शानदार होगी”</p>
+  <p class="motto__en" lang="en">“The larger the struggle, the more glorious the victory.”</p>
+  <footer>— Swami Vivekananda</footer>
+</blockquote>

@@ -4,7 +4,7 @@ collection: teaching
 role: "Assistant Professor"
 period: "2013 – 2014"
 type: "Undergraduate courses"
-permalink: /teaching/2013-vit-jaipur
+
 venue: "Vivekananda Institute of Technology, Jaipur"
 date: 2013-07-01
 location: "Jaipur, India"

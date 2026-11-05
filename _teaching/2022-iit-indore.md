@@ -4,7 +4,7 @@ collection: teaching
 role: "Teaching Assistant"
 period: "2022 – 2026"
 type: "Undergraduate courses"
-permalink: /teaching/2022-iit-indore
+
 venue: "Department of Computer Science and Engineering, IIT Indore"
 date: 2022-08-01
 location: "Indore, India"

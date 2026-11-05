@@ -159,3 +159,14 @@
 }
 .visitor-pill--solid { padding: 0.35em 0.8em; border-radius: 999px; font-size: 0.78em; color: #fff; background: var(--global-base-color); }
 @media print { .visitor-pill { display: none; } }
+
+/* ---------- Contact + motto ---------- */
+.contact-block { margin-top: 0.6em; }
+.contact-line { margin: 0 0 0.35em; text-align: left; i { color: var(--global-base-color); margin-right: 0.3em; } }
+.contact-note { margin: 0.9em 0 0; font-size: 0.95em; color: var(--global-text-color-light); text-align: left; }
+.motto {
+  margin: 2.4em 0 0.5em; padding: 1.1em 1.4em; border-left: 3px solid var(--global-base-color); background: transparent; font-style: normal; text-align: left;
+  .motto__hi { font-size: 1.15em; font-weight: 600; margin: 0 0 0.25em; line-height: 1.6; }
+  .motto__en { font-size: 0.95em; font-style: italic; color: var(--global-text-color-light); margin: 0 0 0.4em; }
+  footer { font-size: 0.85em; color: var(--global-text-color-light); }
+}
