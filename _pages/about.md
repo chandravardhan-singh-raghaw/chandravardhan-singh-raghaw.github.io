@@ -5,6 +5,9 @@ author_profile: true
 redirect_from:
   - /about/
   - /about.html
+header:
+  image: banner-iisc.jpg
+  caption: "Main Building, Indian Institute of Science, Bengaluru"
 ---
 
 <p class="lead-role">Postdoctoral Researcher &middot; Indian Institute of Science (IISc), Bengaluru</p>
