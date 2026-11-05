@@ -54,8 +54,11 @@ Each slide is an entry in `_data/selected.yml`. Replace the placeholder figures 
 ## Visitor counter and "last updated"
 
 * **Last updated** (footer) is the build time, so it changes automatically with every push.
-* **Unique visitors** (bottom-right pill) works out of the box via Visitor Badge (visitorbadge.io): it counts unique visitors, so refreshes do not add to it, and needs no account. If the badge service is ever unreachable the pill hides itself.
-* Optional upgrade: [GoatCounter](https://www.goatcounter.com) gives you a private analytics dashboard as well. Sign up, pick a code (e.g. `chandravardhan`), enable **Settings → Visitor counter → Allow adding visitor counts**, then set `goatcounter_code: "chandravardhan"` in `_config.yml`. The pill then shows GoatCounter's unique-visitor total instead.
+* **Unique visitors** (bottom-right pill) uses [GoatCounter](https://www.goatcounter.com) — free for personal sites, no ads, no cookies, and it gives you a private dashboard. It is wired so that a visitor is counted **once per browser session**: refreshing, or opening other pages of the site, never adds to the count. The pill stays hidden until you finish this one-time setup:
+  1. Go to <https://www.goatcounter.com/signup>, create an account and choose a **code** — e.g. `chandravardhan`. Your dashboard will be at `chandravardhan.goatcounter.com`.
+  2. In that dashboard open **Settings → Visitor counter** (sometimes under *Settings → Main → Visitor counter*) and tick **"Allow adding visitor counts on your website"**, then Save.
+  3. In `_config.yml` set `goatcounter_code: "chandravardhan"` (your code), commit and push.
+  After the next build the pill shows the total; the first number you see will be 1 (you).
 
 ## Sidebar links
 

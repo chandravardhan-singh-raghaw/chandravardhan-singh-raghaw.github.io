@@ -177,3 +177,18 @@
   img { display: block; width: 100%; height: auto; border-radius: 6px; }
   figcaption { font-size: 0.75em; color: var(--global-text-color-light); margin-top: 0.4em; text-align: right; }
 }
+
+/* ---------- Sidebar: compact, sticky, no visible scrollbar ---------- */
+.sidebar {
+  .author__avatar img { max-width: 150px; }
+  .author__name { font-size: 1.05em; margin: 0.6em 0 0.2em; }
+  .author__bio { font-size: 0.85em; margin: 0 0 0.6em; line-height: 1.4; }
+  .author__urls li { font-size: 0.85em; margin-bottom: 0.15em; }
+  .author__urls-wrapper { margin-top: 0.4em; }
+}
+@media screen and (min-width: 1024px) {
+  .sidebar {
+    scrollbar-width: none;            /* Firefox: scrolls with the wheel, draws no bar */
+    &::-webkit-scrollbar { width: 0; height: 0; }   /* Chrome / Edge / Safari */
+  }
+}

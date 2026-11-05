@@ -26,9 +26,9 @@ author:
   avatar           : "profile.png"
   name             : "Chandravardhan Singh Raghaw, Ph.D."
   pronouns         : # example: "she/her"  
-  bio              : "Postdoctoral Researcher, Indian Institute of Science (IISc), Bengaluru"
-  location         : "Bengaluru, India"
-  employer         : "Indian Institute of Science"
+  bio              : "Postdoctoral Researcher, IISc Bengaluru"
+  location         :   # left blank: already in the bio
+  employer         :   # left blank: already in the bio
   uri              : # URL
   email            : "chandravardhan.raghaw@tanuh.ai"
 
@@ -131,7 +131,7 @@ staticman:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
 # Visit counter (GoatCounter, free for personal sites): sign up at https://www.goatcounter.com,
 # choose a code (e.g. "chandravardhan"), and put it here. Leave blank to hide the counter.
-goatcounter_code         : ""   # optional, see README
+goatcounter_code         : "chandravardhan"   # optional, see README
 
 atom_feed:
   hide                   : true

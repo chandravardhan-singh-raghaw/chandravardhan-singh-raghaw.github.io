@@ -8,15 +8,11 @@
   Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> and <a href="https://github.com/academicpages/academicpages.github.io" rel="nofollow">AcademicPages</a>.
 </div>
 
-<!-- Unique-visitor counter, fixed bottom-right.
-     Default: Visitor Badge (no account needed; counts unique visitors, not page refreshes).
-     If goatcounter_code is set in _config.yml, GoatCounter is used instead (gives you a private dashboard too). -->
+<!-- Unique-visitor counter (bottom-right), powered by GoatCounter (see README for the 2-minute setup).
+     Logic: the COUNT call is made once per browser session (first page only), so refreshes and
+     moving between pages are never counted. Every page only READS the total to display it. -->
 {% if site.goatcounter_code and site.goatcounter_code != "" %}
-<div class="visitor-pill visitor-pill--solid" title="Unique visitors"><i class="fas fa-fw fa-user-friends" aria-hidden="true"></i> <span id="visit-count">&hellip;</span> visitors</div>
-{% else %}
-<div class="visitor-pill" title="Unique visitors">
-  <img alt="unique visitors" src="https://api.visitorbadge.io/api/visitors?path={{ site.url | url_encode }}&label=visitors&labelColor=%23555555&countColor=%232f7f93&style=flat" onerror="this.parentNode.style.display='none'">
-</div>
+<div class="visitor-pill visitor-pill--solid" id="visitor-pill" title="Unique visitors"><i class="fas fa-fw fa-user-friends" aria-hidden="true"></i> <span id="visit-count">&hellip;</span> visitors</div>
 {% endif %}
 
 <script>
@@ -37,15 +33,23 @@ document.querySelectorAll('a[href]').forEach(function (a) {
         data-goatcounter-settings='{"no_onload": true}' async src="//gc.zgo.at/count.js"></script>
 <script>
 (function () {
-  var code = "{{ site.goatcounter_code }}", el = document.getElementById("visit-count"), pill = el.closest('.visitor-pill');
-  var counted = false; try { counted = sessionStorage.getItem("gc-visit-counted") === "1"; } catch (e) {}
+  var code = "{{ site.goatcounter_code }}";
+  var el = document.getElementById("visit-count"), pill = document.getElementById("visitor-pill");
+  var KEY = "gc-visit-counted";
+  var counted = false; try { counted = sessionStorage.getItem(KEY) === "1"; } catch (e) {}
+
+  /* 1. COUNT — only if this browser session has not been counted yet */
   function countOnce() {
     if (counted || !window.goatcounter || !window.goatcounter.count) return;
-    window.goatcounter.count({ path: "/", title: "Site visit" });
-    try { sessionStorage.setItem("gc-visit-counted", "1"); } catch (e) {} counted = true;
+    window.goatcounter.count({ path: "visit", title: "Site visit" });
+    try { sessionStorage.setItem(KEY, "1"); } catch (e) {}
+    counted = true;
   }
-  var tries = 0, t = setInterval(function () { if (window.goatcounter || ++tries > 40) { clearInterval(t); countOnce(); } }, 100);
-  fetch("https://" + code + ".goatcounter.com/counter/TOTAL.json").then(function (r) { return r.json(); })
+  if (!counted) { var tries = 0, t = setInterval(function () { if (window.goatcounter || ++tries > 50) { clearInterval(t); countOnce(); } }, 100); }
+
+  /* 2. READ — display the total; this never adds to the count */
+  fetch("https://" + code + ".goatcounter.com/counter/TOTAL.json")
+    .then(function (r) { return r.json(); })
     .then(function (d) { if (d && d.count) el.textContent = d.count; else pill.style.display = "none"; })
     .catch(function () { pill.style.display = "none"; });
 })();
