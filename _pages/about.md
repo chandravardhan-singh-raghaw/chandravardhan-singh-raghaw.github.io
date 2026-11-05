@@ -5,10 +5,12 @@ author_profile: true
 redirect_from:
   - /about/
   - /about.html
-header:
-  image: banner-iisc.jpg
-  caption: "Main Building, Indian Institute of Science, Bengaluru"
 ---
+
+<figure class="home-banner">
+  <img src="{{ site.baseurl }}/images/banner-iisc.jpg" alt="Main Building, Indian Institute of Science, Bengaluru" width="1600" height="1063" fetchpriority="high">
+  <figcaption>Main Building, Indian Institute of Science, Bengaluru</figcaption>
+</figure>
 
 <p class="lead-role">Postdoctoral Researcher &middot; Indian Institute of Science (IISc), Bengaluru</p>
 <p class="lead-badges"><span>Multimodal AI</span><span>Medical Imaging</span><span>Vision-Language Models</span><span>Clinical NLP</span></p>
