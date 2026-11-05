@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4a4f7a"/><stop offset="1" stop-color="#4a4f7a" stop-opacity="0.6"/></linearGradient>
+<pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#fff" stroke-opacity="0.1"/></pattern></defs>
+<rect width="1200" height="675" fill="url(#g)"/><rect width="1200" height="675" fill="url(#grid)"/>
+<g fill="#fff" text-anchor="middle" font-family="Helvetica, Arial, sans-serif">
+<text x="600" y="300" font-size="54" font-weight="bold">T-MPEDNet</text>
+<text x="600" y="350" font-size="26" opacity="0.9">Liver and tumor segmentation (CT)</text>
+<text x="600" y="420" font-size="20" opacity="0.7">Placeholder graphical abstract — replace images/pubs/t-mpednet.svg with your figure (16:9, ~1200×675 px)</text>
+</g></svg>

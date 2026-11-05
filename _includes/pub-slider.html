@@ -1,0 +1,49 @@
+{% include base_path %}
+<div class="pslider" id="pslider" aria-roledescription="carousel" aria-label="Selected publications">
+  <div class="pslider__track">
+    {% for s in site.data.selected %}
+    <article class="pslider__slide{% if forloop.first %} is-active{% endif %}" role="group" aria-label="{{ forloop.index }} of {{ site.data.selected.size }}">
+      <figure class="pslider__fig">
+        <img src="{{ s.image | prepend: '/images/' | prepend: base_path }}" alt="{{ s.caption }}" loading="lazy">
+        <figcaption>{{ s.caption }}</figcaption>
+      </figure>
+      <div class="pslider__body">
+        <h3 class="pslider__title">{{ s.title }}</h3>
+        <p class="pslider__venue">{{ s.venue }}</p>
+        <p class="pslider__tags">{% for t in s.tags %}<span class="pub__badge">{{ t }}</span>{% endfor %}</p>
+        <p class="pslider__links">{% for l in s.links %}<a class="btn btn--inverse btn--small" href="{{ l.url }}">{{ l.label }}</a>{% endfor %}</p>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <div class="pslider__nav">
+    <button class="pslider__btn" data-dir="-1" aria-label="Previous publication"><i class="fas fa-chevron-left"></i></button>
+    <div class="pslider__dots">
+      {% for s in site.data.selected %}<button class="pslider__dot{% if forloop.first %} is-active{% endif %}" data-i="{{ forloop.index0 }}" aria-label="Go to slide {{ forloop.index }}"></button>{% endfor %}
+    </div>
+    <button class="pslider__btn" data-dir="1" aria-label="Next publication"><i class="fas fa-chevron-right"></i></button>
+  </div>
+</div>
+<script>
+(function () {
+  var root = document.getElementById('pslider'); if (!root) return;
+  var slides = root.querySelectorAll('.pslider__slide'), dots = root.querySelectorAll('.pslider__dot');
+  var i = 0, n = slides.length, timer, INTERVAL = 6000;
+  function show(k) {
+    i = (k + n) % n;
+    slides.forEach(function (s, j) { s.classList.toggle('is-active', j === i); });
+    dots.forEach(function (d, j) { d.classList.toggle('is-active', j === i); });
+  }
+  function start() { stop(); if (!matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(function () { show(i + 1); }, INTERVAL); }
+  function stop() { clearInterval(timer); }
+  root.querySelectorAll('.pslider__btn').forEach(function (b) { b.addEventListener('click', function () { show(i + Number(b.dataset.dir)); start(); }); });
+  dots.forEach(function (d) { d.addEventListener('click', function () { show(Number(d.dataset.i)); start(); }); });
+  root.addEventListener('mouseenter', stop); root.addEventListener('mouseleave', start);
+  root.addEventListener('focusin', stop); root.addEventListener('focusout', start);
+  root.addEventListener('keydown', function (e) { if (e.key === 'ArrowLeft') { show(i - 1); start(); } if (e.key === 'ArrowRight') { show(i + 1); start(); } });
+  var x0 = null;
+  root.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  root.addEventListener('touchend', function (e) { if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) { show(i + (dx < 0 ? 1 : -1)); start(); } x0 = null; });
+  start();
+})();
+</script>

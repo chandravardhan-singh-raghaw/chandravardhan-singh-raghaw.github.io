@@ -2,27 +2,45 @@
 
 <div class="page__footer-copyright">
   &copy; {{ site.time | date: '%Y' }} {{ site.name | default: site.title }} &middot;
-  Last updated {{ site.time | date: '%d %B %Y' }} &middot;
-  <span id="visit-count-wrap"><span id="visit-count">&hellip;</span> visits</span> &middot;
+  Last updated {{ site.time | date: '%d %b %Y' }}{% if site.goatcounter_code and site.goatcounter_code != "" %} &middot;
+  <span id="visit-count-wrap"><span id="visit-count">&hellip;</span> visitors</span>{% endif %} &middot;
   <a href="{{ base_path }}/sitemap/">Sitemap</a>
   <br />
   Built with <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> and <a href="https://github.com/academicpages/academicpages.github.io" rel="nofollow">AcademicPages</a>.
 </div>
 
-<!-- Visit counter: counts one visit per browser session (page refreshes and internal navigation are not re-counted). -->
+<!-- Email obfuscation: build the mailto link only when clicked (keeps the address out of the HTML source). -->
+<script>
+document.querySelectorAll('a.email-obf').forEach(function (a) {
+  a.addEventListener('click', function (e) { e.preventDefault(); location.href = 'mailto:' + a.dataset.u + '@' + a.dataset.d; });
+});
+</script>
+
+{% if site.goatcounter_code and site.goatcounter_code != "" %}
+<!-- Visit counter via GoatCounter (https://www.goatcounter.com). One visit is counted per browser session:
+     refreshes and page-to-page navigation inside the same session are not re-counted. -->
+<script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count"
+        data-goatcounter-settings='{"no_onload": true}'
+        async src="//gc.zgo.at/count.js"></script>
 <script>
 (function () {
-  var NS = "chandravardhan-singh-raghaw-github-io", KEY = "site-visits";
+  var code = "{{ site.goatcounter_code }}";
   var el = document.getElementById("visit-count"), wrap = document.getElementById("visit-count-wrap");
-  if (!el) return;
   var counted = false;
-  try { counted = sessionStorage.getItem("cvr-visit-counted") === "1"; } catch (e) {}
-  var url = "https://api.counterapi.dev/v1/" + NS + "/" + KEY + (counted ? "" : "/up");
-  fetch(url).then(function (r) { return r.json(); }).then(function (d) {
-    if (d && typeof d.count === "number") {
-      el.textContent = d.count.toLocaleString();
-      try { sessionStorage.setItem("cvr-visit-counted", "1"); } catch (e) {}
-    } else { wrap.style.display = "none"; }
-  }).catch(function () { wrap.style.display = "none"; });
+  try { counted = sessionStorage.getItem("gc-visit-counted") === "1"; } catch (e) {}
+  function countOnce() {
+    if (counted || !window.goatcounter || !window.goatcounter.count) return;
+    window.goatcounter.count({ path: "/", title: "Site visit" });
+    try { sessionStorage.setItem("gc-visit-counted", "1"); } catch (e) {}
+    counted = true;
+  }
+  // count.js loads async; wait for it
+  var tries = 0, t = setInterval(function () { if (window.goatcounter || ++tries > 40) { clearInterval(t); countOnce(); } }, 100);
+  // total visitors badge (GoatCounter must have "Allow adding visitor counts" enabled in Settings → Visitor counter)
+  fetch("https://" + code + ".goatcounter.com/counter/TOTAL.json")
+    .then(function (r) { return r.json(); })
+    .then(function (d) { if (d && d.count) el.textContent = d.count; else wrap.style.display = "none"; })
+    .catch(function () { wrap.style.display = "none"; });
 })();
 </script>
+{% endif %}

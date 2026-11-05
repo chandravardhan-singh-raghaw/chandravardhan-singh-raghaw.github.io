@@ -7,18 +7,39 @@ author_profile: true
 
 {% include base_path %}
 
-<p class="pub__intro">Journal and conference papers, grouped by type and listed newest first. Also on <a href="{{ site.author.googlescholar }}">Google Scholar</a> and <a href="{{ site.author.orcid }}">ORCID</a>. <sup>*</sup> denotes equal contribution; impact factors and quartiles are as reported at the time of publication.</p>
+<p class="pub__intro">Also on <a href="{{ site.author.googlescholar }}">Google Scholar</a>{% if site.author.dblp %}, <a href="{{ site.author.dblp }}">DBLP</a>{% endif %}{% if site.author.semantic %}, <a href="{{ site.author.semantic }}">Semantic Scholar</a>{% endif %} and <a href="{{ site.author.orcid }}">ORCID</a>. Listed newest first; <sup>*</sup> denotes equal contribution.</p>
+
+<div class="pub-filters" role="tablist" aria-label="Filter publications">
+  <button class="pub-filter is-active" data-cat="all" aria-pressed="true">All</button>
+  {% for category in site.publication_category %}
+    {% assign n = site.publications | where: "category", category[0] | size %}
+    <button class="pub-filter" data-cat="{{ category[0] }}" aria-pressed="false">{{ category[1].title }} <span class="pub-filter__n">{{ n }}</span></button>
+  {% endfor %}
+</div>
 
 {% for category in site.publication_category %}
-  {% assign title_shown = false %}
-  {% for post in site.publications reversed %}
-    {% if post.category != category[0] %}
-      {% continue %}
-    {% endif %}
-    {% unless title_shown %}
-      <h2>{{ category[1].title }}</h2><hr />
-      {% assign title_shown = true %}
-    {% endunless %}
-    {% include archive-single.html %}
-  {% endfor %}
+  {% assign items = site.publications | where: "category", category[0] %}
+  {% if items.size > 0 %}
+  <section class="pub-group" data-cat="{{ category[0] }}">
+    <h2>{{ category[1].title }}</h2><hr />
+    {% assign counter = items.size %}
+    {% for post in items reversed %}
+      {% include archive-single.html %}
+    {% endfor %}
+  </section>
+  {% endif %}
 {% endfor %}
+
+<script>
+(function () {
+  var buttons = document.querySelectorAll('.pub-filter'), groups = document.querySelectorAll('.pub-group');
+  function apply(cat) {
+    buttons.forEach(function (b) { var on = b.dataset.cat === cat; b.classList.toggle('is-active', on); b.setAttribute('aria-pressed', on); });
+    groups.forEach(function (g) { g.style.display = (cat === 'all' || g.dataset.cat === cat) ? '' : 'none'; });
+    if (history.replaceState) history.replaceState(null, '', cat === 'all' ? location.pathname : '#' + cat);
+  }
+  buttons.forEach(function (b) { b.addEventListener('click', function () { apply(b.dataset.cat); }); });
+  var h = location.hash.replace('#', '');
+  if (h && document.querySelector('.pub-group[data-cat="' + h + '"]')) apply(h);
+})();
+</script>

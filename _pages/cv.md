@@ -13,13 +13,14 @@ redirect_from:
 
 Education
 ======
-* **PhD, Computer Science and Engineering**, Indian Institute of Technology Indore, 2022 – 2026. CPI 9.00. Supervisor: Dr. Nagendra Kumar.
+* **Ph.D., Computer Science and Engineering**, Indian Institute of Technology Indore, 2022 – 2026. CPI 9.00. Supervisor: Dr. Nagendra Kumar.
+  * Thesis: *"Advancing Computer-Aided Medical Diagnosis: Synthesizing Global Context and Local Precision for Pathological Image Analysis of Diverse Imaging Modalities"* (defended August 2026).
 * **M.Tech, Information Technology**, Govt. Engineering College Ajmer (RTU Kota), 2011 – 2013. Department topper.
 * **B.Tech, Information Technology**, Govt. Engineering College Ajmer (RTU Kota), 2007 – 2011.
 
 Experience
 ======
-* **Postdoctoral Researcher**, AI Centre of Excellence in Healthcare (TANUH), Indian Institute of Science, Bengaluru — 2026 – present
+* **Postdoctoral Researcher**, AI Centre of Excellence in Healthcare (TANUH), Indian Institute of Science, Bengaluru — Jul 2026 – present
   * Researching Indian brain foundation models (IndiNeuroFM) for clinical healthcare.
   * Developing multimodal vision-language architectures for automated clinical report generation.
   * Designing evaluation benchmarks and cross-modal alignment frameworks for medical imaging.
@@ -30,7 +31,7 @@ Experience
 * **Project Manager (IT)**, Mechatronix Techno Solution — 2014 – 2015
   * Led IT infrastructure projects to deadline and budget; managed resource allocation and vendor contracts.
 * **Assistant Professor**, Vivekananda Institute of Technology, Jaipur — 2013 – 2014
-  * Taught graduate coursework in computer architecture and advanced operating systems.
+  * Taught undergraduate courses in computer architecture and operating systems.
 
 Publications
 ======
@@ -67,8 +68,7 @@ Honours and awards
 
 Academic service
 ======
-* **Conference reviewer:** MICCAI, ACM The Web Conference
-* **Journal reviewer:** Expert Systems with Applications; Engineering Applications of Artificial Intelligence; Biomedical Signal Processing and Control; Informatics in Medicine Unlocked; Scientific Reports; BMC Artificial Intelligence; BMC Cancer; BMC Medical Informatics and Decision Making; Multimedia Systems; Signal, Image and Video Processing; Discover Applied Sciences
+Reviewer for MICCAI, ACM The Web Conference and eleven journals; symposium and workshop coordinator. Full list on the [Academic Service](/academic-service/) page.
 
 Positions of responsibility
 ======
@@ -96,6 +96,4 @@ Workshops and professional development
 
 References
 ======
-* **Prof. Phaneendra K. Yalavarthy**, Professor, Dept. of Computational and Data Sciences, IISc Bangalore — yalavarthy@iisc.ac.in (Postdoctoral advisor)
-* **Dr. Nagendra Kumar**, Associate Professor, Dept. of CSE, IIT Indore — nagendra@iiti.ac.in (PhD supervisor)
-* **Dr. Ranveer Singh**, Associate Professor & Head, Dept. of CSE, IIT Indore — ranveer@iiti.ac.in (PSPC member)
+Contact details available upon request.

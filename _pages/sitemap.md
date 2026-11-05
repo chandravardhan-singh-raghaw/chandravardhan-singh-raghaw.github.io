@@ -11,6 +11,7 @@ author_profile: true
 * [Publications]({{ base_path }}/publications/)
 * [Teaching]({{ base_path }}/teaching/)
 * [CV]({{ base_path }}/cv/)
-* [Gallery]({{ base_path }}/gallery/)
+* [Academic Service]({{ base_path }}/academic-service/)
+* [Academic Activities]({{ base_path }}/activities/)
 
 An [XML sitemap]({{ base_path }}/sitemap.xml) is also available.

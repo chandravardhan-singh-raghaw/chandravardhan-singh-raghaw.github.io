@@ -1,0 +1,44 @@
+# Selected publications shown in the slider on the home page (order = slide order).
+# image: file in images/pubs/ (graphical abstract / architecture / qualitative result, 16:9 works best)
+# caption: one line describing the figure
+# tags: short labels (e.g. "EMNLP 2026", "CORE A*", "First author", "Q1")
+# links: label + url pairs (DOI, Code, Dataset, PDF ...)
+- title: "CliQ-RRG: Clinical-Knowledge Guided Disease-aware Visual–Textual Alignment for QA-Style Radiology Report Generation"
+  venue: "Findings of EMNLP 2026"
+  image: pubs/cliq-rrg.svg
+  caption: "Disease-aware visual–textual alignment turns a chest X-ray into a QA-style report grounded in clinical knowledge."
+  tags: ["Conference", "CORE A*", "First author"]
+  links:
+    - { label: "DOI", url: "https://doi.org/10.18653/2026.findings-emnlp.2333" }
+
+- title: "H-SemiS: Hierarchical Fusion of Semi and Self-Supervised Learning for Knee Osteoarthritis Severity Grading"
+  venue: "Expert Systems with Applications, 2026"
+  image: pubs/h-semis.svg
+  caption: "Hierarchical fusion of semi- and self-supervised signals for Kellgren–Lawrence grading from knee radiographs."
+  tags: ["Journal", "Q1", "First author"]
+  links:
+    - { label: "DOI", url: "https://doi.org/10.1016/j.eswa.2026.132279" }
+
+- title: "T-MPEDNet: Transformer-aware Multiscale Progressive Encoder-Decoder Network with Feature Recalibration for Tumor and Liver Segmentation"
+  venue: "Biomedical Signal Processing and Control, 2025"
+  image: pubs/t-mpednet.svg
+  caption: "Multiscale progressive encoder–decoder with feature recalibration for liver and tumor segmentation in abdominal CT."
+  tags: ["Journal", "Q1", "First author"]
+  links:
+    - { label: "DOI", url: "https://doi.org/10.1016/j.bspc.2025.108225" }
+
+- title: "An Explainable Contrastive-based Dilated Convolutional Network with Transformer for Pediatric Pneumonia Detection"
+  venue: "Applied Soft Computing, 2024"
+  image: pubs/pneumonia.svg
+  caption: "Contrastive dilated convolutions with a transformer head, plus saliency maps that show where the model looks."
+  tags: ["Journal", "Q1", "First author"]
+  links:
+    - { label: "DOI", url: "https://doi.org/10.1016/j.asoc.2024.112258" }
+
+- title: "CoTCoNet: An Optimized Coupled Transformer-Convolutional Network with Adaptive Graph Reconstruction for Leukemia Detection"
+  venue: "Computers in Biology and Medicine, 2024"
+  image: pubs/cotconet.svg
+  caption: "Coupled transformer–convolutional features with adaptive graph reconstruction for leukemia cell classification."
+  tags: ["Journal", "Q1", "First author"]
+  links:
+    - { label: "DOI", url: "https://doi.org/10.1016/j.compbiomed.2024.108821" }

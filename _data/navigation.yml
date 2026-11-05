@@ -2,12 +2,11 @@
 main:
   - title: "Publications"
     url: /publications/
-
   - title: "Teaching"
     url: /teaching/
-
+  - title: "Service"
+    url: /academic-service/
+  - title: "Activities"
+    url: /activities/
   - title: "CV"
     url: /cv/
-
-  - title: "Gallery"
-    url: /gallery/

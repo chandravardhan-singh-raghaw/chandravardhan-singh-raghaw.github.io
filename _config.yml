@@ -24,9 +24,9 @@ repository               : "chandravardhan-singh-raghaw/chandravardhan-singh-rag
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Chandravardhan Singh Raghaw"
+  name             : "Chandravardhan Singh Raghaw, Ph.D."
   pronouns         : # example: "she/her"  
-  bio              : "Postdoctoral Researcher · Multimodal AI for medical imaging"
+  bio              : "Postdoctoral Researcher, Indian Institute of Science (IISc), Bengaluru. Multimodal AI · Medical Imaging · Vision-Language Models · Clinical NLP"
   location         : "Bengaluru, India"
   employer         : "Indian Institute of Science"
   uri              : # URL
@@ -39,7 +39,8 @@ author:
   inspire-hep      : # URL
   impactstory      : # URL
   orcid            : "https://orcid.org/0009-0003-2268-9507"
-  semantic         : # URL
+  semantic         : "https://www.semanticscholar.org/author/Chandravardhan-Singh-Raghaw/2310260213"
+  dblp             : "https://dblp.org/pid/381/6472.html"
   ssrn             : # URL
   pubmed           : 
   researchgate     : # URL
@@ -84,10 +85,10 @@ author:
 
 # Publication Category - The following the list of publication categories and their headings
 publication_category:
-  conferences:
-    title: 'Conference Papers'
   manuscripts:
     title: 'Journal Articles'
+  conferences:
+    title: 'Conference Papers'
   chapters:
     title: 'Book Chapters'
   preprints:
@@ -128,6 +129,10 @@ staticman:
       type               : "date"
       options:
         format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+# Visit counter (GoatCounter, free for personal sites): sign up at https://www.goatcounter.com,
+# choose a code (e.g. "chandravardhan"), and put it here. Leave blank to hide the counter.
+goatcounter_code         : ""
+
 atom_feed:
   hide                   : true
   path                   : # blank (default) uses feed.xml

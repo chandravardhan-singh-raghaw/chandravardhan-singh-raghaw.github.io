@@ -20,7 +20,9 @@ Personal academic website, built on the [AcademicPages](https://github.com/acade
 | CV | `_pages/cv.md`; PDF at `files/CV_Chandravardhan_Singh_Raghaw.pdf` |
 | Publications | one Markdown file per paper in `_publications/` |
 | Teaching | one file per institution in `_teaching/` |
-| Gallery | `_pages/gallery.md` (photo lists in the front matter) + images in `images/gallery/` |
+| Selected-publication slider (home) | `_data/selected.yml` + figures in `images/pubs/` |
+| Academic service | `_pages/academic-service.md` |
+| Academic activities (photos) | `_pages/activities.md` (photo lists in the front matter) + images in `images/gallery/` |
 | Profile photo | `images/profile.png` |
 | Footer (last updated, visit counter) | `_includes/footer.html` |
 | Extra CSS | `_sass/layout/_custom.scss` |
@@ -47,7 +49,7 @@ Move a paper from `underreview` to its final category when it is accepted, and u
 
 ## Adding a photo
 
-Drop the image into `images/gallery/`, then add an entry to the relevant list in the front matter of `_pages/gallery.md`:
+Drop the image into `images/gallery/`, then add an entry to the relevant list in the front matter of `_pages/activities.md`:
 
 ```yaml
   - url: gallery/emnlp-2026.jpg
@@ -56,10 +58,22 @@ Drop the image into `images/gallery/`, then add an entry to the relevant list in
     title: "Presenting CliQ-RRG at EMNLP 2026"
 ```
 
+## Selected-publication slider (home page)
+
+Each slide is an entry in `_data/selected.yml`. Replace the placeholder figures in `images/pubs/` with your graphical abstracts (16:9, about 1200×675 px, PNG or JPG) and update the `image:` field to the new file name. The slider advances every 6 seconds, pauses on hover, and supports arrows, dots, keyboard and swipe.
+
 ## Visit counter and "last updated"
 
 * **Last updated** is the build time, so it changes automatically with every push.
-* **Visits** uses the free [CounterAPI](https://counterapi.dev) service (namespace and key are set in `_includes/footer.html`). A visit is counted once per browser session, so refreshing or moving between pages does not add to the count. If the service is unreachable the counter hides itself. To switch to another service (e.g. GoatCounter, which also gives you a private analytics dashboard) replace the `<script>` block in `_includes/footer.html`.
+* **Visitors** uses [GoatCounter](https://www.goatcounter.com) (free for personal sites, no cookies, no ads). One-time setup:
+  1. Sign up at goatcounter.com and choose a code, e.g. `chandravardhan` (your dashboard becomes `chandravardhan.goatcounter.com`).
+  2. In the GoatCounter dashboard: **Settings → Visitor counter → tick "Allow adding visitor counts"** and save.
+  3. In `_config.yml` set `goatcounter_code: "chandravardhan"`, commit and push.
+  The footer then shows the total number of visitors. A visit is counted once per browser session, so refreshing or moving between pages does not inflate it. Until the code is set the counter is hidden.
+
+## Sidebar links
+
+In `_config.yml` → `author:` fill in `semantic:` (Semantic Scholar author page URL) and `dblp:` (DBLP page URL) and they appear in the sidebar and on the Publications page. The email is shown as `name [at] domain` and the mailto link is assembled only when clicked, to reduce scraping.
 
 ## Previewing locally (optional)
 

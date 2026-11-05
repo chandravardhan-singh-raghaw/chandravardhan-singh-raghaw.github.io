@@ -34,7 +34,8 @@
         <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
       {% endif %}
       {% if author.email %}
-        <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
+        {% assign em = author.email | split: "@" %}
+        <li><a href="#" class="email-obf" data-u="{{ em[0] }}" data-d="{{ em[1] }}"><i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>{{ em[0] }} [at] {{ em[1] }}</a></li>
       {% endif %}
 
       <!-- Font Awesome and Academicons icons / Academic websites -->
@@ -67,6 +68,9 @@
       {% endif %}
       {% if author.semantic %}
         <li><a href="{{ author.semantic }}"><i class="ai ai-semantic-scholar ai-fw icon-pad-right"></i>Semantic Scholar</a></li>
+      {% endif %}
+      {% if author.dblp %}
+        <li><a href="{{ author.dblp }}"><i class="ai ai-dblp ai-fw icon-pad-right"></i>DBLP</a></li>
       {% endif %}
       {% if author.ssrn %}
         <li><a href="{{ author.ssrn }}"><i class="ai ai-ssrn ai-fw icon-pad-right"></i>SSRN</a></li>
