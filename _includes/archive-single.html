@@ -26,6 +26,10 @@
       </div>
     {% endif %}
 
+    {% if post.collection == 'publications' and post.category == 'underreview' %}
+    {%- comment -%} Anonymity: under-review manuscripts show only the venue badge (no title, authors or link). {%- endcomment -%}
+    <p class="pub__badges"><span class="pub__badge pub__badge--venue">{{ post.venue }}</span>{% if post.badges %}{% assign bl = post.badges | split: " · " %}{% for b in bl %}<span class="pub__badge">{{ b }}</span>{% endfor %}{% endif %}</p>
+    {% else %}
     <h2 class="archive__item-title" itemprop="headline">
       {% if post.link %}
         <a href="{{ post.link }}">{{ title }}</a> <a href="{{ base_path }}{{ post.url }}" rel="permalink"><i class="fa fa-link" aria-hidden="true" title="permalink"></i><span class="sr-only">Permalink</span></a>
@@ -68,6 +72,7 @@
         slidesurl=post.slidesurl
         bibtexurl=post.bibtexurl
     %}
+    {% endif %}
     {% endif %}
 
   </article>
